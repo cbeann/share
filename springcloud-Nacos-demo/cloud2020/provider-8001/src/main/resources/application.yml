@@ -1,0 +1,15 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: provider
+  cloud:
+    ###nocos\u6CE8\u518C\u4E2D\u5FC3
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
