@@ -1,0 +1,33 @@
+server:
+  port: 80
+spring:
+  application:
+    name: sentinel-ribbon-openFeign
+  cloud:
+    nacos:
+      discovery: #Nacos\u6CE8\u518C\u4E2D\u5FC3\u5730\u5740
+        server-addr: 39.105.30.146:8848
+    sentinel:
+      transport: #dashboard\u5730\u5740
+        dashboard: localhost:8080
+        port: 8719  #\u9ED8\u8BA4\u7AEF\u53E3\uFF0C\u5982\u679C\u88AB\u5360\u7528\u5219\u4ECE8719\u4F9D\u6B21+1\u626B\u63CF
+
+###sentinel\u53EF\u4EE5\u76D1\u63A7\u5230\u6B64\u670D\u52A1
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
+###\u6FC0\u6D3BSentinel\u5BF9openFeign\u7684\u652F\u6301
+feign:
+  sentinel:
+    enabled: true
+
+
+logging:
+  level:
+    #feign\u65E5\u5FD7\u4EE5\u4EC0\u4E48\u7EA7\u522B\u76D1\u63A7\u54EA\u4E2A\u63A5\u53E3
+    #feign\u65E5\u5FD7\u4EE5debug\u7EA7\u522B\u76D1\u63A7com.imooc.springcloud.service.PaymentFeignService
+    com.example.nacossentinelopenfeign80.HelloService: debug
