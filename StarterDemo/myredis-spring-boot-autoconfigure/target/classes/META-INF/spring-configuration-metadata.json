@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "name": "myredis",
+      "type": "com.myredis.MyRedisProperties",
+      "sourceType": "com.myredis.MyRedisProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "myredis.host",
+      "type": "java.lang.String",
+      "sourceType": "com.myredis.MyRedisProperties"
+    },
+    {
+      "name": "myredis.password",
+      "type": "java.lang.String",
+      "sourceType": "com.myredis.MyRedisProperties"
+    }
+  ],
+  "hints": []
+}
